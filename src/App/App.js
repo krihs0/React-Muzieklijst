@@ -5,7 +5,12 @@ const App = () => {
     
     return(
         <>
-        <Todo />
+        <Todo title="Rock"/>
+        <Todo title="Pop" />
+        <Todo title="Ambient"/>
+        <Todo title="Shit"/>
+        <Todo title="Rap"/>
+        <Todo title="Indie"/>
         </>
     )
 }

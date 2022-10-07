@@ -24,11 +24,12 @@
 }
 
 .todo__list{
-    height: 80%;
+    min-height: 16rem;
     list-style: none;
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    overflow: auto;
 }
 
 .todo__item{

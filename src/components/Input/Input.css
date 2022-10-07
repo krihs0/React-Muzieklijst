@@ -1,7 +1,24 @@
 .input{
-    margin: 2rem;
+    margin: 1rem;
     padding: 0.5rem 1rem;
     font-size: 100%;
     font-family: "Open sans", sand-serif;
-    
+    width: 80%;
+
+}
+
+.button{
+    height: 5rem;
+    margin: 2rem;
+    font-family: "Open sans", sand-serif;
+    font-size: 100%;
+    width: 80%;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    max-height: 100%;
 }

@@ -20,7 +20,7 @@ class Item extends React.Component{
         }
 
         return(
-            <li onClick={this.onItemClick} className={this.className}>{this.props.name}</li>
+            <li onClick={this.onItemClick} className={this.className}>{this.props.song} - {this.props.artistname}</li>
         )
     }
 }

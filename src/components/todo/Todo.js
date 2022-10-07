@@ -1,6 +1,5 @@
 import "./Todo.css";
 import React from "react";
-import tasksObject from "../../data/tasks";
 import Item from "../Item/Item";
 import Input from "../Input/Input";
 
@@ -8,46 +7,53 @@ class Todo extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            tasks: [],
+            songs: [],
         }
        
     }
 
     componentDidMount(){
-         this.setState({
-            tasks: tasksObject.tasks,
-        })
+
     }
 
     componentDidUpdate(){
        
     }
 
-    inputPressedEnter = (inputFromInputComponent) =>{
+    inputPressedEnter = (songInputFromInputComponent, artistInputFromInputComponent) =>{
+        console.log(songInputFromInputComponent)
+        console.log(artistInputFromInputComponent)
+
         let toBeAdded = [
             {
-                name: inputFromInputComponent,
+                songname: songInputFromInputComponent,
                 done: false,
-                id: this.state.tasks.length + 1,
+                id: this.state.songs.length + 1,
+                artistname: artistInputFromInputComponent,
             },
         ]
-        let mergedArray = this.state.tasks.concat(toBeAdded);
+        console.log(toBeAdded);
+
+        let mergedArray = this.state.songs.concat(toBeAdded);
         this.setState({
-            tasks: mergedArray,
+            songs: mergedArray,
         })
+        console.log(mergedArray);
+
+        
     }
 
     render(){
 
 
-        let items = this.state.tasks.map(task =>{
-            return <Item done={task.done} name={task.name} key={task.id}></Item>
+        let items = this.state.songs.map(song =>{
+            return <Item done={song.done} song={song.songname} artistname={song.artistname} key={song.id}></Item>
         })
 
         return(
             <article className="todo">
                 <header className="todo__header">
-                <h1 className="todo__heading">Things to do:</h1>
+                <h1 className="todo__heading">{this.props.title}</h1>
                 </header>
                 <ul className="todo__list">{items}</ul>
                 <Input inputPressedEnter={this.inputPressedEnter}/>
